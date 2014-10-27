@@ -3,7 +3,7 @@ thistle
 
 A graph database experiment with the Dart language and its ecosystem.
 
-##Getting started -
+###Getting started -
     
     import 'package:thistle/thistle.dart';
     
@@ -15,7 +15,7 @@ The [Thistle] graph world is defined by interfaces (classes whose names start wi
 a capital I), there is currently one mechanism for creating a graph - the static 
 method shown in the code above. This creates an "in memory" IGraph instance.
 
-Adding a vertex - 
+###Adding a vertex - 
 
     ...
     
@@ -28,7 +28,7 @@ of [IVertex]. This vertex has no properties and nothing connected to it and may 
 accessed in the future via the [IGraph.vertices] iterator.
 
 
-Adding an edge - 
+###Adding an edge - 
 
     ...
     
@@ -43,7 +43,7 @@ of [IEdge]. This edge has no properties but is directed from the "from" and to t
 vertices. It may be accessed in the future via the [IGraph.edges] iterator.
 
 
-Iterating over edges - 
+###Iterating over edges - 
 
     ...
     
@@ -56,7 +56,7 @@ The code shown above iterates over all the edges in a graph selecting those labe
 with "knows" that end on a vertice where the "age" property is greater than 30 and then 
 produces a list of the names of the origin of the "knows over 30" edge.
 
-A little less verbose - 
+###A little less verbose - 
 
     ...
     
@@ -72,7 +72,7 @@ when using this feature and your editor may complain a little about the dynamic
 properties.
 
 
-Potentially somewhat faster - 
+###Potentially somewhat faster - 
 
     Set<IEdge> knows = new Set();
     g.onEdgeCreation((e) {
@@ -99,7 +99,7 @@ for all the elements reachable from the edge (in this case if its label is
 "knows"). Depending on the size of the graph iterating the "index" collection rather 
 than the whole graph may be more efficient.
 
-Potentially somewhat faster with chained conditional - 
+###Potentially somewhat faster with chained conditional - 
 
     Set<IEdge> knows = new Set();
     g.onEdgeCreation((e) => knows.add(e))
@@ -120,7 +120,7 @@ Graph event listeners can have a chained conditional test that will be called
 to determine if the event listener function should be called. Its a matter of
 style/preference as to which conditional approach is best.
 
-Potentially somewhat faster with utility collector - 
+###Potentially somewhat faster with utility collector - 
 
         EdgeCollector knows = new EdgeCollector("knows");
         knows.attachTo(g);
@@ -137,7 +137,7 @@ There are some edge and vertice collection utility classes available.
 
 
 
-Potentially somewhat faster again (in a slightly different programmatic style) - 
+###Potentially somewhat faster again (in a slightly different programmatic style) - 
 
     Set<IVertex> people = new Set();
 
@@ -174,7 +174,7 @@ in the collection of "indices" then the "onXXXXXPropertyChange" and
 "onXXXXXPropertyRemoved" listeners need to be added as well.
 
 
-The story so far - 
+###The story so far - 
 
 We have a graph model that has no specific query language but utilises
 the iteration features in Dart to process the graph. 
@@ -184,7 +184,7 @@ functions for edge and vertice graph mutation events as well as for
 edge and vertice property mutation events.
 
 
-Persistence ( again? ) -
+###Persistence ( again? ) -
 
 How do we load a graph from some persistent storage somewhere? 
 Thistle provides no direct mechanism to do this but it does provide the 
