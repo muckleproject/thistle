@@ -1,0 +1,8 @@
+name: thistle
+version: 0.1.0
+author: Stuart Hynd
+description: A directed property graph model interface with an in memory implementation.
+environment:
+  sdk: '>=1.0.0'
+dev_dependencies:
+  unittest: '>=0.11.0'
