@@ -3,7 +3,7 @@ thistle
 
 A graph database experiment with the Dart language and its ecosystem.
 
-Getting started -
+#Getting started -
     
     import 'package:thistle/thistle.dart';
     
@@ -84,7 +84,7 @@ Potentially somewhat faster -
     ...
     
     // construct the graph after adding the listener
-///
+
     ...
     
     var knowsOver30 = knows.where((e) => e.to.age >= 30)
@@ -108,7 +108,7 @@ Potentially somewhat faster with chained conditional -
     ...
     
     // construct the graph after adding the listener
-///
+
     ...
     
     var knowsOver30 = knows.where((e) => e.to.age >= 30)
@@ -127,7 +127,7 @@ Potentially somewhat faster with utility collector -
     ...
     
     // construct the graph after adding the listener
-///
+
     ...
         var knowsOver30 = knows.collected.where((e) => e.to.age >= 30)
                          .map((e) => e.from.name);
@@ -140,16 +140,16 @@ There are some edge and vertice collection utility classes available.
 Potentially somewhat faster again (in a slightly different programmatic style) - 
 
     Set<IVertex> people = new Set();
-///
+
     collectPeople(IEdge e) => people.add(e.from);
     bool knowsDestinationIsOver30(IEdge e) => e.label == "knows" && e.to.age >= 30;
-///
+
     g.onEdgeCreation(collectPeople).when(knowsDestinationIsOver30);
     
     ...
     
     // construct the graph after adding the listener
-///
+
     ...
     
     for(IVertex v in people){
