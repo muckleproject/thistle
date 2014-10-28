@@ -53,8 +53,8 @@ vertices. It may be accessed in the future via the [IGraph.edges] iterator.
     ...
 
 The code shown above iterates over all the edges in a graph selecting those labeled
-with "knows" that end on a vertice where the "age" property is greater than 30 and then 
-produces a list of the names of the origin of the "knows over 30" edge.
+with "knows" that end on a vertice where the "age" property is equal to or greater 
+than 30 and then produces a list of the names of the origin of the "knows over 30" edge.
 
 ###A little less verbose - 
 
