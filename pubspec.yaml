@@ -1,6 +1,6 @@
 name: thistle
 version: 0.1.0
-author: Stuart Hynd
+author: Stuart Hynd <stuart.hynd.dart@gmail.com>
 description: A directed property graph model interface with an in memory implementation.
 homepage: https://github.com/muckleproject/thistle
 environment:
